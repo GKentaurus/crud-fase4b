@@ -9,33 +9,37 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-12">
-      <h1>Listado de empleados</h1>
-      @isset($employeeName)
+      <h1>Listado de clientes</h1>
+      @isset($customerName)
         <div class="col-12 alert alert-info">
-          El empleado{{$employeeName}} ha sido eliminado.
+          El cliente {{$customerName}} ha sido eliminado.
         </div>
       @endisset
 
-      @if(isset($employees) && count($employees) > 0)
+      @if(isset($customers) && count($customers) > 0)
         <table class="table">
           <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nombres</th>
             <th scope="col">Documento</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Teléfono</th>
             <th scope="col">Acciones</th>
           </tr>
           </thead>
           <tbody>
-          @foreach($employees as $employee)
+          @foreach($customers as $customer)
             <tr>
-              <th scope="row">{{ $employee['id'] }}</th>
-              <td>{{ $employee['firstname'] }} {{ $employee['lastname'] }}</td>
-              <td>{{ $employee['document_type'] }} {{ $employee['document_number'] }}</td>
+              <th scope="row">{{ $customer['id'] }}</th>
+              <td>{{ $customer['firstname'] }} {{ $customer['lastname'] }}</td>
+              <td>{{ $customer['document_type'] }} {{ $customer['document_number'] }}</td>
+              <td>{{ $customer['address'] }}</td>
+              <td>{{ $customer['phone_number'] }}</td>
               <td>
-                <a href="{{ route('employee.show', $employee['id']) }}" class="btn btn-sm btn-info">Ver</a>
-                <a href="{{ route('employee.edit', $employee['id']) }}" class="btn btn-sm btn-primary">Editar</a>
-                <form action="{{ route('employee.destroy', $employee['id']) }}" method="POST" class="d-inline">
+                <a href="{{ route('customer.show', $customer['id']) }}" class="btn btn-sm btn-info">Ver</a>
+                <a href="{{ route('customer.edit', $customer['id']) }}" class="btn btn-sm btn-primary">Editar</a>
+                <form action="{{ route('customer.destroy', $customer['id']) }}" method="POST" class="d-inline">
                   @csrf
                   @method('DELETE')
                   <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>

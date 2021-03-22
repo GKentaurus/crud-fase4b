@@ -11,7 +11,7 @@
     <div class="col-12">
       <form class="row g-3" method="post" action="{{ route('employees.update', $employee['id']) }}">
         @method('PUT')
-        @include('employees.form')
+        @include('employee.form')
       </form>
     </div>
   </div>
