@@ -3,15 +3,16 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Employee;
+use App\Models\Bill;
 use App\Models\Job;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\Redirect;
 
 class JobController extends Controller
 {
@@ -30,27 +31,6 @@ class JobController extends Controller
   }
 
   /**
-   * Show the form for creating a new resource.
-   *
-   * @return Application|Factory|View|Response
-   */
-  public function create()
-  {
-    return view('job.create');
-  }
-
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @param Request $request
-   * @return Response
-   */
-  public function store(Request $request)
-  {
-    //
-  }
-
-  /**
    * Display the specified resource.
    *
    * @param Job $job
@@ -58,23 +38,18 @@ class JobController extends Controller
    */
   public function show(Job $job)
   {
-    $totalOT = $job->jobDetails->sum(function($detail) {
+    $totalOT = $job->jobDetails->sum(function ($detail) {
       return $detail->part_cost + $detail->workforce_cost;
     });
+
+    $bill = Bill::all()
+      ->where('job_id', $job->id)
+      ->last();
+
     return view('job.show')
       ->with('job', $job)
-      ->with('totalOT', $totalOT);
-  }
-
-  /**
-   * Show the form for editing the specified resource.
-   *
-   * @param Job $job
-   * @return Response
-   */
-  public function edit(Job $job)
-  {
-    //
+      ->with('totalOT', $totalOT)
+      ->with('bill', $bill);
   }
 
   /**
@@ -86,24 +61,35 @@ class JobController extends Controller
    */
   public function update(Request $request, Job $job)
   {
-    $totalOT = $job->jobDetails->sum(function($detail) {
+    $totalOT = $job->jobDetails->sum(function ($detail) {
       return $detail->part_cost + $detail->workforce_cost;
     });
     $job->active_job = false;
     $job->save();
+
+    $data = $request->all();
+    $data['job_id'] = $job->id;
+    $data['customer_id'] = $job->vehicule->customer->id;
+    $data['total_cost'] = $totalOT;
+    $data['total_tax'] = ($totalOT * 0.19);
+
+    $bill = Bill::create($data);
+
     return view('job.show')
       ->with('job', $job)
-      ->with('totalOT', $totalOT);
+      ->with('totalOT', $totalOT)
+      ->with('bill', $bill);
   }
 
   /**
    * Remove the specified resource from storage.
    *
    * @param Job $job
-   * @return Response
+   * @return RedirectResponse|Response
    */
   public function destroy(Job $job)
   {
     Job::destroy($job->id);
+    return Redirect::route('vehicule.index');
   }
 }

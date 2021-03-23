@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
+use App\Models\Bill;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -60,7 +61,11 @@ class CustomerController extends Controller
    */
   public function show(Customer $customer)
   {
-    return view('customer.show')->with('customer', $customer);
+    $bills = Bill::all()
+      ->where('customer_id', $customer->id);
+    return view('customer.show')
+      ->with('customer', $customer)
+      ->with('bills', $bills);
   }
 
   /**

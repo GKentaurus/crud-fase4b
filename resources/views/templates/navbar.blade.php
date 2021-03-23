@@ -36,6 +36,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('job.index') }}">Trabajos</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('bill.index') }}">Facturas</a>
+              </li>
             </ul>
           </div>
         </div>

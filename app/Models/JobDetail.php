@@ -53,4 +53,9 @@ class JobDetail extends Model
   public function job(): BelongsTo {
     return $this->belongsTo(Job::class);
   }
+
+  public function employee(): BelongsTo
+  {
+    return $this->belongsTo(Employee::class);
+  }
 }

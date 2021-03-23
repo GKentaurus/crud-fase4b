@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Bill;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -14,80 +17,31 @@ class BillController extends Controller
   /**
    * Display a listing of the resource.
    *
-   * @return Bill[]|Collection|Response
+   * @return Bill[]|Application|Factory|View|Collection|Response
    */
   public function index()
   {
-    return Bill::all();
-  }
-
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return Response
-   */
-  public function create()
-  {
-    //
-  }
-
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @param Request $request
-   * @return Bill|Model|Response
-   */
-  public function store(Request $request)
-  {
-    if ($request->validate(Bill::createRules())) {
-      return Bill::create($request->only(Bill::createOnly()));
-    }
+    return view('bill.index')
+      ->with('bills', Bill::all());
   }
 
   /**
    * Display the specified resource.
    *
    * @param Bill $bill
-   * @return Bill|Response
+   * @return Bill|Application|Factory|View|Response
    */
   public function show(Bill $bill)
   {
-    return $bill;
-  }
-
-  /**
-   * TODO: Eliminar método
-   * Show the form for editing the specified resource.
-   *
-   * @param Bill $bill
-   * @return Response
-   */
-  public function edit(Bill $bill)
-  {
-    //
-  }
-
-  /**
-   * TODO: Eliminar método
-   * Update the specified resource in storage.
-   *
-   * @param Request $request
-   * @param Bill $bill
-   * @return Response
-   */
-  public function update(Request $request, Bill $bill)
-  {
-    //
-  }
-
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param Bill $bill
-   * @return Response
-   */
-  public function destroy(Bill $bill)
-  {
-    Bill::destroy($bill->id);
+    $job = $bill->job;
+    $vehicule = $job->vehicule;
+    $customer = $vehicule->customer;
+    $employee = $job->employee;
+    return view('bill.show')
+      ->with('bill', $bill)
+      ->with('job', $job)
+      ->with('vehicule', $vehicule)
+      ->with('customer', $customer)
+      ->with('employee', $employee);
   }
 }

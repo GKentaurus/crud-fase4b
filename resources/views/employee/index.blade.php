@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   @include('templates.header')
-  <title>Listado de clientes</title>
+  <title>Listado de empleados</title>
 </head>
 <body>
 @include('templates.navbar')

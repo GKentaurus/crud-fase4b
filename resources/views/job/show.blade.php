@@ -39,15 +39,22 @@
         <input type="number" class="form-control" id="subtotal" name="brand" aria-describedby="subtotal"
                value="{{$totalOT}}" disabled>
       </div>
-      @if($totalOT > 0 && $job['active_job']))
+      @if($totalOT > 0 && $job['active_job'])
         <div class="mb-3">
           <form method="post" action="{{ route('job.update', $job['id']) }}">
             @csrf
             @method('PUT')
-            <input type="hidden" name="active_job" value="0">
-            <button class="btn btn-danger" type="submit">Finalizar OT</button>
+            <button class="btn btn-success" type="submit">Finalizar OT</button>
           </form>
         </div>
+      @elseif($totalOT == 0 && $job['active_job'])
+        <form method="post" action="{{ route('job.destroy', $job['id']) }}">
+          @csrf
+          @method('DELETE')
+          <button class="btn btn-danger" type="submit">Cancelar OT</button>
+        </form>
+      @elseif(isset($bill))
+        <a href="{{ route('bill.show', $bill['id']) }}" class="btn btn-info">Ver factura</a>
       @endif
 
     </div>

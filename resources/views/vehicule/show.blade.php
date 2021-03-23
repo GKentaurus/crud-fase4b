@@ -36,6 +36,10 @@
     <div class="col-7">
       <div class="mb-2">
         <h2>Órdenes de trabajo relacionadas</h2>
+        <form action="{{ route('vehicule.job.store', $vehicule['id']) }}" method="POST" class="d-inline">
+          @csrf
+          <button type="submit" class="btn btn-sm btn-success">Crear OT</button>
+        </form>
         @include('vehicule.job.index')
       </div>
     </div>

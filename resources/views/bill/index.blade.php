@@ -15,8 +15,9 @@
           <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Razón Social</th>
-            <th scope="col">Vehículo</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">OT</th>
+            <th scope="col">Fecha</th>
             <th scope="col">Total</th>
             <th scope="col">Acciones</th>
           </tr>
@@ -25,18 +26,12 @@
           @foreach($bills as $bill)
             <tr>
               <th scope="row">{{ $bill['id'] }}</th>
-              <td>{{ $bill['Dirigido a'] }}</td>
-              <td>{{ $bill['document_type'] }} {{ $bill['document_number'] }}</td>
-              <td>{{ $bill['address'] }}</td>
-              <td>{{ $bill['phone_number'] }}</td>
+              <td>{{ $bill->customer['firstname'] }} {{ $bill->customer['lastname'] }}</td>
+              <td>{{ $bill->job['id'] }}</td>
+              <td>{{ $bill['created_at'] }}</td>
+              <td>{{ $bill['total_cost'] + $bill['total_tax'] }}</td>
               <td>
-                <a href="{{ route('customer.show', $bill['id']) }}" class="btn btn-sm btn-info">Ver</a>
-                <a href="{{ route('customer.edit', $bill['id']) }}" class="btn btn-sm btn-primary">Editar</a>
-                <form action="{{ route('customer.destroy', $bill['id']) }}" method="POST" class="d-inline">
-                  @csrf
-                  @method('DELETE')
-                  <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
-                </form>
+                <a href="{{ route('bill.show', $bill['id']) }}" class="btn btn-sm btn-info">Ver</a>
               </td>
             </tr>
           @endforeach

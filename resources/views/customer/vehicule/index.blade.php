@@ -20,10 +20,6 @@
         <td>{{ $vehicule['model'] }}</td>
         <td>{{ $vehicule['color'] }}</td>
         <td>
-          <form action="{{ route('vehicule.job.store', $vehicule['id']) }}" method="POST" class="d-inline">
-            @csrf
-            <button type="submit" class="btn btn-sm btn-success">Crear OT</button>
-          </form>
           <a href="{{ route('vehicule.show', $vehicule['id']) }}" class="btn btn-sm btn-info">Ver</a>
           <a href="{{ route('vehicule.edit', $vehicule['id']) }}" class="btn btn-sm btn-primary">Editar</a>
           <form action="{{ route('vehicule.destroy', $vehicule['id']) }}" method="POST" class="d-inline">

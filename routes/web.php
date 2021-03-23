@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\BillController;
 use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\CustomerVehiculeController;
 use App\Http\Controllers\Api\EmployeeController;
@@ -54,11 +55,9 @@ Route::resource('vehicule/{vehicule}/job', VehiculeJobController::class,
 Route::resource('vehicule', VehiculeController::class);
 Route::resource('job', JobController::class,
   [
-    'only' => [
-      'index',
-      'show',
-      'edit',
-      'update'
+    'except' => [
+      'create',
+      'store'
     ]
   ]
 );
@@ -76,3 +75,11 @@ Route::resource('job/{job}/job-detail', JobDetailController::class,
   ]
 );
 Route::resource('employee', EmployeeController::class);
+Route::resource('bill', BillController::class,
+  [
+    'only' => [
+      'index',
+      'show'
+    ]
+  ]
+);
