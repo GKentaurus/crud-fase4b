@@ -23,8 +23,8 @@ class JobDetail extends Model
   public static function createRules() {
     return [
       'employee_id' => ['required', 'numeric'],
-      'intervened_part' => ['required', 'min:10'],
-      'intervention_description' => ['required', 'min:10'],
+      'intervened_part' => ['required', 'min:3'],
+      'intervention_description' => ['required', 'min:3'],
       'part_cost' => ['numeric', 'min:0'],
       'workforce_cost' => ['required', 'numeric', 'min:0'],
     ];

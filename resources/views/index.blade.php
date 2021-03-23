@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   @include('templates.header')
-  <title>Control de register - Taller mecánico "SENA"</title>
+  <title>Control de registro - Taller mecánico "SENA"</title>
 </head>
 <body>
 @include('templates.navbar')
