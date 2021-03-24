@@ -15,8 +15,8 @@
           <div class="card-body">
             <h5 class="card-title">Trabajos</h5>
             <p class="card-text">
-              Pendientes <h5>({{ $openJobs->count()}})</h5>
-              Finalizados <h5> </h5>
+              Pendientes <h5>({{ $totalOpenJobs}})</h5>
+              Finalizados <h5>({{ $totalClosedJobs}})</h5>
             </p>
             <a href="#" class="card-link">Ver</a>
           </div>

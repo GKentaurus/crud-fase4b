@@ -9,7 +9,7 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-6">
-      <h2>Listado de trabajos activos</h2>
+      <h2>Listado de trabajos activos</h2> <small>({{ $openJobs->count() }} trabajos pendientes)</small>
       @if(isset($openJobs) && count($openJobs) > 0)
         <table class="table">
           <thead>
@@ -38,7 +38,7 @@
       @endif
     </div>
     <div class="col-6">
-      <h2>Listado de trabajos cerrados</h2>
+      <h2>Listado de trabajos cerrados</h2><small>({{ $closedJobs->count() }} trabajos cerrados)</small>
       @if(isset($closedJobs) && count($closedJobs) > 0)
         <table class="table">
           <thead>

@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\BillController;
 use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\CustomerVehiculeController;
 use App\Http\Controllers\Api\EmployeeController;
+use App\Http\Controllers\Api\IndexController;
 use App\Http\Controllers\Api\JobController;
 use App\Http\Controllers\Api\JobDetailController;
 use App\Http\Controllers\Api\VehiculeController;
@@ -21,9 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-  return view('index');
-});
+Route::get('/', [IndexController::class, 'index']);
 
 Route::resource('customer', CustomerController::class);
 Route::resource('customer/{customer}/vehicule', CustomerVehiculeController::class,
