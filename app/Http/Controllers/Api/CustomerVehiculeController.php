@@ -53,8 +53,9 @@ class CustomerVehiculeController extends Controller
     if ($this->validate($request, Vehicule::createRules())) {
       $data = $request->only(Vehicule::createOnly());
       $data['customer_id'] = $customer->id;
-      Vehicule::create($data);
+      $vehicule = Vehicule::create($data);
+      return Redirect::route('vehicule.show', $vehicule->id);
     }
-    return Redirect::route('vehicule.show', $customer->id);
+    return Redirect::route('customer.show', $customer->id);
   }
 }

@@ -61,7 +61,9 @@
     <div class="col-7">
       <div class="mb-2">
         <h2>Contenido de la OT</h2>
-        <a href="{{ route('job.detail.create', $job['id']) }}" class="btn btn-success">Añadir trabajo</a>
+        @if($job['active_job'])
+          <a href="{{ route('job.detail.create', $job['id']) }}" class="btn btn-success">Añadir trabajo</a>
+        @endif
         @include('job.detail.index')
       </div>
     </div>
