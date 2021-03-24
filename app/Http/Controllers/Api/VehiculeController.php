@@ -74,7 +74,7 @@ class VehiculeController extends Controller
   public function destroy(Vehicule $vehicule)
   {
     $vehicule_license_plate = $vehicule->license_plate;
-    Customer::destroy($vehicule->id);
+    Vehicule::destroy($vehicule->id);
     return Redirect::route('customer.index')->with('license_plate', $vehicule_license_plate);
   }
 }
