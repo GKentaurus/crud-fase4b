@@ -17,7 +17,13 @@
         <td>{{ $detail['part_cost'] + $detail['workforce_cost'] }}</td>
         <td>{{ $detail['created_at'] }}</td>
         <td>
-          <a href="{{ route('job.detail.show', [$job['id'], $detail['id']]) }}" class="btn btn-sm btn-primary">Ampliar</a>
+          <a href="{{ route('job.detail.show', [$job['id'], $detail['id']]) }}" class="btn btn-sm btn-success">Ver</a>
+          <a href="{{ route('job.detail.edit', [$job['id'], $detail['id']]) }}" class="btn btn-sm btn-primary">Editar</a>
+          <form action="{{ route('job.detail.destroy', [$job['id'], $detail['id']]) }}" method="POST" class="d-inline">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+          </form>
         </td>
       </tr>
     @endforeach

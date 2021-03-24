@@ -42,6 +42,16 @@ class JobDetail extends Model
 
   public static function updateRules() {
     return [
+      'employee_id' => ['numeric'],
+      'intervened_part' => ['min:3'],
+      'intervention_description' => ['min:3'],
+      'part_cost' => ['numeric', 'min:0'],
+      'workforce_cost' => ['numeric', 'min:0'],
+    ];
+  }
+
+  public static function updateOnly() {
+    return [
       'employee_id',
       'intervened_part',
       'intervention_description',

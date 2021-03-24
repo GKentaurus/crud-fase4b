@@ -81,34 +81,48 @@ class JobDetailController extends Controller
   /**
    * Show the form for editing the specified resource.
    *
+   * @param Job $job
    * @param JobDetail $jobDetail
-   * @return Response
+   * @return Application|Factory|View|Response
    */
-  public function edit(JobDetail $jobDetail)
+  public function edit(Job $job, JobDetail $jobDetail)
   {
-    //
+    $employees = Employee::all();
+    return view('job.detail.edit')
+      ->with('job', $job)
+      ->with('jobDetail', $jobDetail)
+      ->with('employees', $employees);
   }
 
   /**
    * Update the specified resource in storage.
    *
    * @param Request $request
+   * @param Job $job
    * @param JobDetail $jobDetail
-   * @return Response
+   * @return RedirectResponse|Response
+   * @throws ValidationException
    */
-  public function update(Request $request, JobDetail $jobDetail)
+  public function update(Request $request, Job $job, JobDetail $jobDetail)
   {
-    //
+    if($this->validate($request, JobDetail::updateRules())) {
+      $jobDetail->fill($request->only(JobDetail::updateOnly()));
+      $jobDetail->save();
+      return Redirect::route('job.show', $jobDetail->job->id);
+    }
   }
 
   /**
    * Remove the specified resource from storage.
    *
+   * @param Job $job
    * @param JobDetail $jobDetail
-   * @return Response
+   * @return RedirectResponse|Response
    */
-  public function destroy(JobDetail $jobDetail)
+  public function destroy(Job $job, JobDetail $jobDetail)
   {
+    $job = $job->id;
     JobDetail::destroy($jobDetail->id);
+    return Redirect::route('job.show', $job);
   }
 }

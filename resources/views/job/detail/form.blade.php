@@ -4,7 +4,7 @@
     <label for="employee_id" class="form-label">Trabajador</label>
     <select class="form-select" aria-label="Default select example" id="employee_id" name="employee_id"
             aria-describedby="employee_id_help">
-      @if(!isset($customer))
+      @if(!isset($employees))
         <option selected>- Seleccione una opción -</option>
       @endif
 
@@ -22,9 +22,9 @@
 
 <div class="mb-3 col-6">
   <label for="intervened_part" class="form-label">Parte intervenida</label>
-  @if(isset($customer))
+  @if(isset($jobDetail))
     <input type="text" class="form-control" id="intervened_part" name="intervened_part"
-           aria-describedby="intervened_part_help" value="{{$customer['intervened_part']}}">
+           aria-describedby="intervened_part_help" value="{{$jobDetail['intervened_part']}}">
   @else
     <input type="text" class="form-control" id="intervened_part" name="intervened_part"
            aria-describedby="intervened_part_help">
@@ -38,9 +38,9 @@
 
 <div class="mb-3 col-6">
   <label for="intervention_description" class="form-label">Descripción del trabajo</label>
-  @if(isset($customer))
+  @if(isset($jobDetail))
     <textarea class="form-control" id="intervention_description" name="intervention_description"
-              aria-describedby="intervention_description_help">{{$customer['intervention_description']}}</textarea>
+              aria-describedby="intervention_description_help">{{$jobDetail['intervention_description']}}</textarea>
   @else
     <textarea class="form-control" id="intervention_description" name="intervention_description"
               aria-describedby="intervention_description_help"></textarea>
@@ -54,9 +54,9 @@
 
 <div class="mb-3 col-6">
   <label for="part_cost" class="form-label">Costo de la parte intervenida</label>
-  @if(isset($customer))
+  @if(isset($jobDetail))
     <input type="text" class="form-control" id="part_cost" name="part_cost"
-           aria-describedby="part_cost_help" value="{{$customer['part_cost']}}">
+           aria-describedby="part_cost_help" value="{{$jobDetail['part_cost']}}">
   @else
     <input type="text" class="form-control" id="part_cost" name="part_cost"
            aria-describedby="part_cost_help">
@@ -70,9 +70,9 @@
 
 <div class="mb-3 col-6">
   <label for="workforce_cost" class="form-label">Costo de la mano de obra</label>
-  @if(isset($customer))
+  @if(isset($jobDetail))
     <input type="text" class="form-control" id="workforce_cost" name="workforce_cost"
-           aria-describedby="workforce_cost_help" value="{{$customer['workforce_cost']}}">
+           aria-describedby="workforce_cost_help" value="{{$jobDetail['workforce_cost']}}">
   @else
     <input type="text" class="form-control" id="workforce_cost" name="workforce_cost"
            aria-describedby="workforce_cost_help">
