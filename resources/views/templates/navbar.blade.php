@@ -1,48 +1,91 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">Taller mecánico SENA</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Inicio</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Clientes
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="{{ route('customer.create') }}">Registrar</a></li>
-                  <li><a class="dropdown-item" href=" {{ route('customer.index') }}">Listado</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Empleados
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="{{ route('employee.create') }}">Registrar</a></li>
-                  <li><a class="dropdown-item" href=" {{ route('employee.index') }}">Listado</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('vehicule.index') }}">Vehículos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('job.index') }}">Trabajos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('bill.index') }}">Facturas</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
+
+<ul id="dropdown_cliente" class="dropdown-content">
+  <li><a class="dropdown-item" href="{{ route('customer.create') }}">Registrar</a></li>
+  <li><a class="dropdown-item" href=" {{ route('customer.index') }}">Listado</a></li>
+</ul>
+<ul id="dropdown_cliente" class="dropdown-content">
+  <li><a class="dropdown-item" href="{{ route('employee.create') }}">Registrar</a></li>
+  <li><a class="dropdown-item" href=" {{ route('employee.index') }}">Listado</a></li>
+</ul>
+<nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Taller mecánico SENA</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a aria-current="page" href="/">Inicio</a>
+        </li>
+        <li>
+          <a class="dropdown-trigger" href="#" data-target="dropdown_cliente">
+            Clientes
+            <i class="material-icons right">arrow_drop_down</i>
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-trigger" href="#" data-target="dropdown_empleado">
+            Empleados
+            <i class="material-icons right">arrow_drop_down</i>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('vehicule.index') }}">Vehículos</a>
+        </li>
+        <li>
+          <a href="{{ route('job.index') }}">Trabajos</a>
+        </li>
+        <li>
+          <a href="{{ route('bill.index') }}">Facturas</a>
+        </li>
+    </ul>
   </div>
-</div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">  
+<li>
+  <div class="user-view">
+    <div class="background">
+      <img src="images/office.jpg">
+    </div>
+    <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+    <a href="#"><span class="white-text">Taller mecánico SENA</span></a>
+  </div>
+</li>
+<li>
+  <a aria-current="page" href="/">Inicio</a>
+</li>
+<li>
+  <div class="collapsible-header">
+    Clientes
+    <i class="material-icons right">arrow_drop_down</i>
+  </div>
+  <div class="collapsible-body">
+  <li><a class="dropdown-item" href="{{ route('customer.create') }}">Registrar</a></li>
+  <li><a class="dropdown-item" href=" {{ route('customer.index') }}">Listado</a></li>
+  </div>
+</li>
+<li>
+  <div class="collapsible-header">
+    Empleados
+    <i class="material-icons right">arrow_drop_down</i>
+  </div>
+  <div class="collapsible-body">
+  <li><a class="dropdown-item" href="{{ route('employee.create') }}">Registrar</a></li>
+  <li><a class="dropdown-item" href=" {{ route('employee.index') }}">Listado</a></li>
+  </div>
+</li>
+<li>
+  <a href="{{ route('vehicule.index') }}">Vehículos</a>
+</li>
+<li>
+  <a href="{{ route('job.index') }}">Trabajos</a>
+</li>
+<li>
+  <a href="{{ route('bill.index') }}">Facturas</a>
+</li>
+</ul>
+<script>
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+    $('.collapsible').collapsible();
+  });
+</script>
