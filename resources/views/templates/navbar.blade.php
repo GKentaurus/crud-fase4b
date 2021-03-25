@@ -41,7 +41,7 @@
 </nav>
 </div>
 
-<ul class="sidenav" id="mobile-demo">  
+<ul class="sidenav" id="mobile-demo">
   <li>
     <div class="user-view">
       <div class="background">
