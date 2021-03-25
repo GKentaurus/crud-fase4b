@@ -8,7 +8,7 @@
 @include('templates.navbar')
 <div class="container mt-3">
   <div class="row">
-    <div class="col-4">
+    <div class="col-lg-4">
       <h2>Información del cliente</h2>
       <div class="mb-3">
         <label for="firstname" class="form-label">Nombres</label>
@@ -46,8 +46,8 @@
                aria-describedby="phone_number_help" value="{{$customer['phone_number']}}" disabled>
       </div>
     </div>
-    <div class="col-8">
-      <div class="mb-2">
+    <div class="col-lg-8">
+      <div class="mb-2 table-responsive">
         <h2>Vehículos asociados</h2>
         <a href="{{ route('customer.vehicule.create', $customer['id']) }}" class="btn btn-success">Añadir vehículo</a>
       </div>

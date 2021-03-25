@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="footer fixed-bottom">
   <p>
     Hecho con Juguito de Laravel
     <br>

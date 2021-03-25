@@ -8,7 +8,7 @@
 @include('templates.navbar')
 <div class="container mt-3">
   <div class="row">
-    <div class="col-5">
+    <div class="col-lg-5">
       <h2>Información del Vehiculo</h2>
       <div class="mb-3">
         <label for="license_plate" class="form-label">Placa</label>
@@ -33,8 +33,8 @@
         <a href="{{route('customer.show', $vehicule['customer_id'])}}" class="btn btn-primary">Ver propietario del vehículo</a>
       </div>
     </div>
-    <div class="col-7">
-      <div class="mb-2">
+    <div class="col-lg-7">
+      <div class="mb-2 table-responsive">
         <h2>Órdenes de trabajo relacionadas</h2>
         <form action="{{ route('vehicule.job.store', $vehicule['id']) }}" method="POST" class="d-inline">
           @csrf

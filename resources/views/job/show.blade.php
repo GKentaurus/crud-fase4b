@@ -8,7 +8,7 @@
 @include('templates.navbar')
 <div class="container mt-3">
   <div class="row">
-    <div class="col-5">
+    <div class="col-lg-5">
       <h2>Información de la Orden de Trabajo</h2>
       <div class="mb-3">
         <label for="license_plate" class="form-label">Vehículo</label>
@@ -58,8 +58,8 @@
       @endif
 
     </div>
-    <div class="col-7">
-      <div class="mb-2">
+    <div class="col-lg-7">
+      <div class="mb-2 table-responsive">
         <h2>Contenido de la OT</h2>
         @if($job['active_job'])
           <a href="{{ route('job.detail.create', $job['id']) }}" class="btn btn-success">Añadir trabajo</a>

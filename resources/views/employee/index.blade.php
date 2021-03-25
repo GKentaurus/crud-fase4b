@@ -8,7 +8,7 @@
 @include('templates.navbar')
 <div class="container mt-3">
   <div class="row">
-    <div class="col-12 tabla">
+    <div class="col-12 tabla table-responsive">
       <h1>Listado de empleados</h1>
       @isset($employeeName)
         <div class="col-12 alert alert-info">

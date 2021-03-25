@@ -8,7 +8,7 @@
 @include('templates.navbar')
 <div class="container mt-3">
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 tabla table-responsive">
       <h1>Listado de Facturas</h1>
       @if(isset($bills) && count($bills) > 0)
         <table class="table">

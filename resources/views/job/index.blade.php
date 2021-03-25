@@ -8,7 +8,7 @@
 @include('templates.navbar')
 <div class="container mt-3">
   <div class="row">
-    <div class="col-6">
+    <div class="col-lg-6 table-responsive">
       <h2>Listado de trabajos activos</h2> <small>({{ $openJobs->count() }} trabajos pendientes)</small>
       @if(isset($openJobs) && count($openJobs) > 0)
         <table class="table">
@@ -37,7 +37,7 @@
         <div class="alert alert-warning">No hay registros</div>
       @endif
     </div>
-    <div class="col-6">
+    <div class="col-lg-6 table-responsive">
       <h2>Listado de trabajos cerrados</h2><small>({{ $closedJobs->count() }} trabajos cerrados)</small>
       @if(isset($closedJobs) && count($closedJobs) > 0)
         <table class="table">
