@@ -7,10 +7,3 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
-<script>
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-    $('.collapsible').collapsible();
-    $('.dropdown-trigger').dropdown();
-  });
-</script>
