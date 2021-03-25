@@ -84,11 +84,3 @@
     <a href="{{ route('bill.index') }}">Facturas</a>
   </li>
 </ul>
-
-<script>
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-    $('.collapsible').collapsible();
-    $('.dropdown-trigger').dropdown();
-  });
-</script>

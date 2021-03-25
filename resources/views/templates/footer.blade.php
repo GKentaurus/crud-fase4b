@@ -1,3 +1,11 @@
+
+<script>
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+    $('.collapsible').collapsible();
+    $('.dropdown-trigger').dropdown();
+  });
+</script>
 <footer class="page-footer">
   <p>
     Hecho con Juguito de Laravel

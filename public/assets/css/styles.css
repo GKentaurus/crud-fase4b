@@ -22,9 +22,10 @@ small {
 
 .title,
 label,
+input,
 h1,
 h2 {
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255) i !important;
 }
 
 .card {
