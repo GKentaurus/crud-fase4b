@@ -16,7 +16,8 @@ body {
 }
 
 .form-text,
-small {
+small,
+.helper-text {
     color: rgb(216, 216, 216);
 }
 

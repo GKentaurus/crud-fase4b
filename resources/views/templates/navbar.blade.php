@@ -1,8 +1,8 @@
 <div class="container">
-<nav>
+<nav class="blue darken-4">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Taller mecánico SENA</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="/" class="brand-logo"> Taller mecánico SENA</a>
+      <a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li>
           <a aria-current="page" href="/">Inicio</a>
@@ -41,7 +41,7 @@
 </nav>
 </div>
 
-<ul class="sidenav" id="mobile-demo">  
+<ul class="sidenav" id="mobile-demo">
   <li>
     <div class="user-view">
       <div class="background">
@@ -84,3 +84,11 @@
     <a href="{{ route('bill.index') }}">Facturas</a>
   </li>
 </ul>
+<script>
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+    $('.collapsible').collapsible();
+    $('.dropdown-trigger').dropdown();
+    $('select').formSelect();
+  });
+</script>
