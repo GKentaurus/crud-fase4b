@@ -3,7 +3,7 @@
   <li><a class="dropdown-item" href="{{ route('customer.create') }}">Registrar</a></li>
   <li><a class="dropdown-item" href=" {{ route('customer.index') }}">Listado</a></li>
 </ul>
-<ul id="dropdown_cliente" class="dropdown-content">
+<ul id="dropdown_empleado" class="dropdown-content">
   <li><a class="dropdown-item" href="{{ route('employee.create') }}">Registrar</a></li>
   <li><a class="dropdown-item" href=" {{ route('employee.index') }}">Listado</a></li>
 </ul>
