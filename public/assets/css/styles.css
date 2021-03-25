@@ -15,12 +15,19 @@ body {
     font-size: 20px;
 }
 
-.title {
-    color: #fff;
+.form-text,
+small {
+    color: rgb(216, 216, 216);
+}
+
+.title,
+label,
+h1 {
+    color: rgb(255, 255, 255);
 }
 
 .card {
-    color: #fff;
+    color: rgb(255, 255, 255);
     background-color: #434F5B;
     transition: all 0.25s ease;
     margin: 5px;
