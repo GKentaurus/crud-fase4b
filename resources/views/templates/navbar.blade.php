@@ -16,13 +16,13 @@
           <a aria-current="page" href="/">Inicio</a>
         </li>
         <li>
-          <a class="dropdown-trigger" href="#" data-target="dropdown_cliente">
+          <a class="dropdown-trigger" data-target="dropdown_cliente">
             Clientes
             <i class="material-icons right">arrow_drop_down</i>
           </a>
         </li>
         <li>
-          <a class="dropdown-trigger" href="#" data-target="dropdown_empleado">
+          <a class="dropdown-trigger" data-target="dropdown_empleado">
             Empleados
             <i class="material-icons right">arrow_drop_down</i>
           </a>
@@ -83,9 +83,3 @@
   <a href="{{ route('bill.index') }}">Facturas</a>
 </li>
 </ul>
-<script>
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-    $('.collapsible').collapsible();
-  });
-</script>
