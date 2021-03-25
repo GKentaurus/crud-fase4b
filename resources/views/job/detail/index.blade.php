@@ -14,7 +14,7 @@
       <tr>
         <th scope="row">{{ $detail['id'] }}</th>
         <td>{{ $detail['intervened_part'] }}</td>
-        <td>{{ $detail['part_cost'] + $detail['workforce_cost'] }}</td>
+        <td>${{ $detail['part_cost'] + $detail['workforce_cost'] }}</td>
         <td>{{ $detail['created_at'] }}</td>
         <td>
           <a href="{{ route('job.detail.show', [$job['id'], $detail['id']]) }}" class="btn btn-sm btn-success">Ver</a>
