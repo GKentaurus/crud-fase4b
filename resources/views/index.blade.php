@@ -10,11 +10,11 @@
   
   <h1 class="title">Dashboard</h1>
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col l4 s12">
       <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Trabajos</h5>
-          <p class="card-text">
+        <div class="card-content white-text">
+          <span class="card-title">Trabajos</span>
+          <p class="text">
             <span class="cant">{{ $totalOpenJobs}}</span>
             <br>
             Pendientes
@@ -22,11 +22,11 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-4">
+    <div class="col l4 s12">
       <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Trabajos</h5>
-          <p class="card-text">
+        <div class="card-content white-text">
+          <span class="card-title">Trabajos</span>
+          <p class="text">
             <span class="cant">{{ $totalClosedJobs}}</span>
             <br>
             Finalizados
@@ -34,11 +34,11 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-4">
+    <div class="col l4 s12">
       <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text">
+        <div class="card-content white-text">
+          <span class="card-title"></span>
+          <p class="text">
             <span class="cant">{{ $totalVehicules}}</span>
             <br>
             Vehiculos

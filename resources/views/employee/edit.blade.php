@@ -8,8 +8,8 @@
 @include('templates.navbar')
 <div class="container mt-3">
   <div class="row">
-    <div class="col-12">
-      <form class="row g-3" method="post" action="{{ route('employees.update', $employee['id']) }}">
+    <div class="col s12">
+      <form method="post" action="{{ route('employees.update', $employee['id']) }}">
         @method('PUT')
         @include('employee.form')
       </form>

@@ -8,33 +8,33 @@
 @include('templates.navbar')
 <div class="container mt-3">
   <div class="row">
-    <div class="col-lg-5">
+    <div class="col l5 s12">
       <h2>Información del Vehiculo</h2>
-      <div class="mb-3">
-        <label for="license_plate" class="form-label">Placa</label>
-        <input type="text" class="form-control" id="license_plate" name="license_plate" aria-describedby="license_plate_help" value="{{$vehicule['license_plate']}}" disabled>
+      <div class="input-field col l6 s12">
+        <input type="text" id="license_plate" name="license_plate" aria-describedby="license_plate_help" value="{{$vehicule['license_plate']}}" disabled>
+        <label for="license_plate">Placa</label>
       </div>
 
-      <div class="mb-3">
-        <label for="brand" class="form-label">Marca</label>
-        <input type="text" class="form-control" id="brand" name="brand" aria-describedby="brand_help" value="{{$vehicule['brand']}}" disabled>
+      <div class="input-field col l6 s12">
+        <input type="text" id="brand" name="brand" aria-describedby="brand_help" value="{{$vehicule['brand']}}" disabled>
+        <label for="brand">Marca</label>
       </div>
 
-      <div class="mb-3">
-        <label for="model" class="form-label">Modelo</label>
-        <input type="text" class="form-control" id="model" name="brand" aria-describedby="model" value="{{$vehicule['model']}}" disabled>
+      <div class="input-field col l6 s12">
+        <input type="text" id="model" name="brand" aria-describedby="model" value="{{$vehicule['model']}}" disabled>
+        <label for="model">Modelo</label>
       </div>
 
-      <div class="mb-3">
-        <label for="color" class="form-label">Color</label>
-        <input type="text" class="form-control" id="color" name="color" aria-describedby="color_help" value="{{$vehicule['color']}}" disabled>
+      <div class="input-field col l6 s12">
+        <input type="text" id="color" name="color" aria-describedby="color_help" value="{{$vehicule['color']}}" disabled>
+        <label for="color">Color</label>
       </div>
-      <div class="mb-3">
+      <div class="input-field col l6 s12">
         <a href="{{route('customer.show', $vehicule['customer_id'])}}" class="btn btn-primary">Ver propietario del vehículo</a>
       </div>
     </div>
-    <div class="col-lg-7">
-      <div class="mb-2 table-responsive">
+    <div class="col l7 s12">
+      <div class="col s12">
         <h2>Órdenes de trabajo relacionadas</h2>
         <form action="{{ route('vehicule.job.store', $vehicule['id']) }}" method="POST" class="d-inline">
           @csrf

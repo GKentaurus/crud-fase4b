@@ -1,36 +1,35 @@
 @csrf
 
-<div class="mb-3 col-6">
-  <label for="firstname" class="form-label">Nombres</label>
+<div class="input-field col l6 s12">
   @if(isset($customer))
-    <input type="text" class="form-control" id="firstname" name="firstname" aria-describedby="firstname_help" value="{{$customer['firstname']}}">
+    <input type="text" id="firstname" name="firstname" aria-describedby="firstname_help" value="{{$customer['firstname']}}">
   @else
-    <input type="text" class="form-control" id="firstname" name="firstname" aria-describedby="firstname_help">
+    <input type="text" id="firstname" name="firstname" aria-describedby="firstname_help">
   @endif
-  <div id="firstname_help" class="form-text">Ingrese su primer y segundo nombre</div>
+  <label for="firstname">Nombres</label>
+  <span class="helper-text" data-error="wrong" data-success="right">Ingrese su primer y segundo nombre</span>
 
   @error('firstname')
   <div class="alert alert-danger p-0 pb-0">{{ $message }}</div>
   @enderror
 </div>
 
-<div class="mb-3 col-6">
-  <label for="lastname" class="form-label">Apellidos</label>
+<div class="input-field col l6 s12">
   @if(isset($customer))
-    <input type="text" class="form-control" id="lastname" name="lastname" aria-describedby="lastname_help" value="{{$customer['lastname']}}">
+    <input type="text" id="lastname" name="lastname" aria-describedby="lastname_help" value="{{$customer['lastname']}}">
   @else
-    <input type="text" class="form-control" id="lastname" name="lastname" aria-describedby="lastname_help">
+    <input type="text" id="lastname" name="lastname" aria-describedby="lastname_help">
   @endif
-  <div id="lastname_help" class="form-text">Ingrese su primer y segundo apellido</div>
+  <label for="lastname">Apellidos</label>
+  <span class="helper-text" data-error="wrong" data-success="right">Ingrese su primer y segundo apellido</span>
 
   @error('lastname')
   <div class="alert alert-danger pt-0 pb-0">{{ $message }}</div>
   @enderror
 </div>
 
-<div class="mb-3 col-6">
-  <label for="document_type" class="form-label">Tipo de documento</label>
-  <select class="form-select" aria-label="Default select example" id="document_type" name="document_type"
+<div class="input-field col l6 s12">
+  <select aria-label="Default select example" id="document_type" name="document_type"
           aria-describedby="document_type_help">
     @if(!isset($customer))
       <option selected>- Seleccione una opción -</option>
@@ -54,54 +53,55 @@
       <option value="NIT">NIT</option>
     @endif
   </select>
-  <div id="document_type_help" class="form-text">Seleccione su tipo de documento</div>
+  <label for="document_type">Tipo de documento</label>
+  <span class="helper-text" data-error="wrong" data-success="right">Seleccione su tipo de documento</span>
 
   @error('document_type')
   <div class="alert alert-danger pt-0 pb-0">{{ $message }}</div>
   @enderror
 </div>
 
-<div class="mb-3 col-6">
-  <label for="document_number" class="form-label">Número de documento</label>
+<div class="input-field col l6 s12">
   @if(isset($customer))
-    <input type="number" class="form-control" id="document_number" name="document_number"aria-describedby="document_number_help" value="{{$customer['document_number']}}">
+    <input type="number" id="document_number" name="document_number"aria-describedby="document_number_help" value="{{$customer['document_number']}}">
   @else
-    <input type="number" class="form-control" id="document_number" name="document_number"aria-describedby="document_number_help">
+    <input type="number" id="document_number" name="document_number"aria-describedby="document_number_help">
   @endif
+  <label for="document_number">Número de documento</label>
+  <span class="helper-text" data-error="wrong" data-success="right">Ingrese el número de documento, sin guiones ni puntos.</span>
 
-  <div id="document_number_help" class="form-text">Ingrese el número de documento, sin guiones ni puntos.</div>
   @error('document_number')
   <div class="alert alert-danger pt-0 pb-0">{{ $message }}</div>
   @enderror
 </div>
 
-<div class="mb-3 col-6">
-  <label for="address" class="form-label">Dirección de facturación</label>
+<div class="input-field col l6 s12">
   @if(isset($customer))
-    <input type="text" class="form-control" id="address" name="address" aria-describedby="address_help" value="{{$customer['address']}}">
+    <input type="text" id="address" name="address" aria-describedby="address_help" value="{{$customer['address']}}">
   @else
-    <input type="text" class="form-control" id="address" name="address" aria-describedby="address_help">
+    <input type="text" id="address" name="address" aria-describedby="address_help">
   @endif
+  <label for="address">Dirección de facturación</label>
+  <span class="helper-text" data-error="wrong" data-success="right">Ingrese la dirección de facturación o residencia.</span>
 
-  <div id="address_help" class="form-text">Ingrese la dirección de facturación o residencia.</div>
   @error('address')
   <div class="alert alert-danger pt-0 pb-0">{{ $message }}</div>
   @enderror
 </div>
 
-<div class="mb-3 col-6">
-  <label for="phone_number" class="form-label">Teléfono</label>
+<div class="input-field col l6 s12">
   @if(isset($customer))
-    <input type="tel" class="form-control" id="phone_number" name="phone_number" aria-describedby="phone_number_help" value="{{$customer['phone_number']}}">
+    <input type="tel" id="phone_number" name="phone_number" aria-describedby="phone_number_help" value="{{$customer['phone_number']}}">
   @else
-    <input type="tel" class="form-control" id="phone_number" name="phone_number" aria-describedby="phone_number_help">
+    <input type="tel" id="phone_number" name="phone_number" aria-describedby="phone_number_help">
   @endif
+  <label for="phone_number">Teléfono</label>
+  <span class="helper-text" data-error="wrong" data-success="right">Ingrese un número telefónico de contacto</span>
 
-  <div id="phone_number_help" class="form-text">Ingrese un número telefónico de contacto</div>
   @error('phone_number')
   <div class="alert alert-danger pt-0 pb-0">{{ $message }}</div>
   @enderror
 </div>
 <div class="mb-3 col-2">
-  <button type="submit" class="btn btn-secondary">Guardar cambios</button>
+  <button type="submit" class="btn waves-effect waves-light green">Guardar cambios</button>
 </div>

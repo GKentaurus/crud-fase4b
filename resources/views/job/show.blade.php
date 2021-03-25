@@ -6,63 +6,63 @@
 </head>
 <body>
 @include('templates.navbar')
-<div class="container mt-3">
+<div class="container">
   <div class="row">
-    <div class="col-lg-5">
+    <div class="col l5 s12">
       <h2>Información de la Orden de Trabajo</h2>
-      <div class="mb-3">
-        <label for="license_plate" class="form-label">Vehículo</label>
-        <input type="text" class="form-control" id="license_plate" name="license_plate"
-               aria-describedby="license_plate_help" value="{{$job->vehicule['license_plate']}}" disabled>
+      <div class="input-field col l6 s12">
+        <input type="text" id="license_plate" name="license_plate"
+        aria-describedby="license_plate_help" value="{{$job->vehicule['license_plate']}}" disabled>
+        <label for="license_plate">Vehículo</label>
       </div>
 
-      <div class="mb-3">
-        <label for="brand" class="form-label">Propietario</label>
-        <input type="text" class="form-control" id="brand" name="brand" aria-describedby="brand_help"
-               value="{{$job->vehicule->customer['firstname']}} {{$job->vehicule->customer['lastname']}}" disabled>
+      <div class="input-field col l6 s12">
+        <input type="text" id="brand" name="brand" aria-describedby="brand_help"
+        value="{{$job->vehicule->customer['firstname']}} {{$job->vehicule->customer['lastname']}}" disabled>
+        <label for="brand">Propietario</label>
       </div>
 
-      <div class="mb-3">
-        <label for="model" class="form-label">Fecha de ingreso</label>
-        <input type="text" class="form-control" id="model" name="brand" aria-describedby="model"
-               value="{{$job['created_at']}}" disabled>
+      <div class="input-field col l6 s12">
+        <input type="text" id="model" name="brand" aria-describedby="model"
+        value="{{$job['created_at']}}" disabled>
+        <label for="model">Fecha de ingreso</label>
       </div>
 
-      <div class="mb-3">
-        <label for="model" class="form-label">Última actualización</label>
-        <input type="text" class="form-control" id="model" name="brand" aria-describedby="model"
-               value="{{$job['updated_at']}}" disabled>
+      <div class="input-field col l6 s12">
+        <input type="text" id="model" name="brand" aria-describedby="model"
+        value="{{$job['updated_at']}}" disabled>
+        <label for="model">Última actualización</label>
       </div>
 
-      <div class="mb-3">
-        <label for="subtotal" class="form-label">Subtotal de la OT</label>
-        <input type="number" class="form-control" id="subtotal" name="brand" aria-describedby="subtotal"
-               value="{{$totalOT}}" disabled>
+      <div class="input-field col l6 s12">
+        <input type="number" id="subtotal" name="brand" aria-describedby="subtotal"
+        value="{{$totalOT}}" disabled>
+        <label for="subtotal">Subtotal de la OT</label>
       </div>
       @if($totalOT > 0 && $job['active_job'])
-        <div class="mb-3">
+        <div class="col s12">
           <form method="post" action="{{ route('job.update', $job['id']) }}">
             @csrf
             @method('PUT')
-            <button class="btn btn-success" type="submit">Finalizar OT</button>
+            <button class="btn waves-effect waves-light light-green" type="submit">Finalizar OT</button>
           </form>
         </div>
       @elseif($totalOT == 0 && $job['active_job'])
         <form method="post" action="{{ route('job.destroy', $job['id']) }}">
           @csrf
           @method('DELETE')
-          <button class="btn btn-danger" type="submit">Cancelar OT</button>
+          <button class="btn waves-effect waves-light red darken-2" type="submit">Cancelar OT</button>
         </form>
       @elseif(isset($bill))
-        <a href="{{ route('bill.show', $bill['id']) }}" class="btn btn-info">Ver factura</a>
+        <a href="{{ route('bill.show', $bill['id']) }}" class="btn waves-effect waves-light blue darken-1">Ver factura</a>
       @endif
 
     </div>
-    <div class="col-lg-7">
-      <div class="mb-2 table-responsive">
+    <div class="col l7 s12">
+      <div class="col s12">
         <h2>Contenido de la OT</h2>
         @if($job['active_job'])
-          <a href="{{ route('job.detail.create', $job['id']) }}" class="btn btn-success">Añadir trabajo</a>
+          <a href="{{ route('job.detail.create', $job['id']) }}" class="btn waves-effect waves-light green">Añadir trabajo</a>
         @endif
         @include('job.detail.index')
       </div>

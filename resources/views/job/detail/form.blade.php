@@ -1,83 +1,81 @@
 @csrf
-<div class="mb-3 col-6">
-  <div class="mb-3 col-6">
-    <label for="employee_id" class="form-label">Trabajador</label>
-    <select class="form-select" aria-label="Default select example" id="employee_id" name="employee_id"
-            aria-describedby="employee_id_help">
-      @if(!isset($employees))
-        <option selected>- Seleccione una opción -</option>
-      @endif
+<div class="input-field col l6 s12">
+  <select aria-label="Default select example" id="employee_id" name="employee_id"
+          aria-describedby="employee_id_help">
+    @if(!isset($employees))
+      <option selected>- Seleccione una opción -</option>
+    @endif
 
-      @foreach($employees as $employee)
-        <option value="{{$employee['id']}}">{{$employee['firstname']}} {{$employee['lastname']}}</option>
-      @endforeach
-    </select>
-    <div id="employee_id_help" class="form-text">Seleccione un empleado o trabajador</div>
+    @foreach($employees as $employee)
+      <option value="{{$employee['id']}}">{{$employee['firstname']}} {{$employee['lastname']}}</option>
+    @endforeach
+  </select>
+  <label for="employee_id">Trabajador</label>
+  <span class="helper-text" data-error="wrong" data-success="right">Seleccione un empleado o trabajador</span>
 
-    @error('employee_id')
-    <div class="alert alert-danger pt-0 pb-0">{{ $message }}</div>
-    @enderror
-  </div>
+  @error('employee_id')
+  <div class="alert alert-danger pt-0 pb-0">{{ $message }}</div>
+  @enderror
 </div>
 
-<div class="mb-3 col-6">
-  <label for="intervened_part" class="form-label">Parte intervenida</label>
+<div class="input-field col l6 s12">
   @if(isset($jobDetail))
-    <input type="text" class="form-control" id="intervened_part" name="intervened_part"
+    <input type="text" id="intervened_part" name="intervened_part"
            aria-describedby="intervened_part_help" value="{{$jobDetail['intervened_part']}}">
   @else
-    <input type="text" class="form-control" id="intervened_part" name="intervened_part"
+    <input type="text" id="intervened_part" name="intervened_part"
            aria-describedby="intervened_part_help">
   @endif
-  <div id="firstname_help" class="form-text">Ingrese su primer y segundo nombre</div>
+  <label for="intervened_part">Parte intervenida</label>
+  <span class="helper-text" data-error="wrong" data-success="right">Ingrese su primer y segundo nombre</span>
 
   @error('intervened_part')
   <div class="alert alert-danger p-0 pb-0">{{ $message }}</div>
   @enderror
 </div>
 
-<div class="mb-3 col-6">
-  <label for="intervention_description" class="form-label">Descripción del trabajo</label>
+<div class="input-field col l6 s12">
   @if(isset($jobDetail))
-    <textarea class="form-control" id="intervention_description" name="intervention_description"
+    <textarea id="intervention_description" name="intervention_description"
               aria-describedby="intervention_description_help">{{$jobDetail['intervention_description']}}</textarea>
   @else
-    <textarea class="form-control" id="intervention_description" name="intervention_description"
+    <textarea id="intervention_description" name="intervention_description"
               aria-describedby="intervention_description_help"></textarea>
   @endif
-  <div id="intervention_description_help" class="form-text">Ingrese de forma detallada el trabajo realizado.</div>
+  <label for="intervention_description">Descripción del trabajo</label>
+  <span class="helper-text" data-error="wrong" data-success="right">Ingrese de forma detallada el trabajo realizado.</span>
 
   @error('intervention_description')
   <div class="alert alert-danger pt-0 pb-0">{{ $message }}</div>
   @enderror
 </div>
 
-<div class="mb-3 col-6">
-  <label for="part_cost" class="form-label">Costo de la parte intervenida</label>
+<div class="input-field col l6 s12">
   @if(isset($jobDetail))
-    <input type="text" class="form-control" id="part_cost" name="part_cost"
+    <input type="text" id="part_cost" name="part_cost"
            aria-describedby="part_cost_help" value="{{$jobDetail['part_cost']}}">
   @else
-    <input type="text" class="form-control" id="part_cost" name="part_cost"
+    <input type="text" id="part_cost" name="part_cost"
            aria-describedby="part_cost_help">
   @endif
-  <div id="firstname_help" class="form-text">Si tuvo que reemplazar una parte, indique el costo.</div>
+  <label for="part_cost">Costo de la parte intervenida</label>
+  <span class="helper-text" data-error="wrong" data-success="right">Si tuvo que reemplazar una parte, indique el costo.</span>
 
   @error('part_cost')
   <div class="alert alert-danger p-0 pb-0">{{ $message }}</div>
   @enderror
 </div>
 
-<div class="mb-3 col-6">
-  <label for="workforce_cost" class="form-label">Costo de la mano de obra</label>
+<div class="input-field col l6 s12">
   @if(isset($jobDetail))
-    <input type="text" class="form-control" id="workforce_cost" name="workforce_cost"
+    <input type="text" id="workforce_cost" name="workforce_cost"
            aria-describedby="workforce_cost_help" value="{{$jobDetail['workforce_cost']}}">
   @else
-    <input type="text" class="form-control" id="workforce_cost" name="workforce_cost"
+    <input type="text" id="workforce_cost" name="workforce_cost"
            aria-describedby="workforce_cost_help">
   @endif
-  <div id="firstname_help" class="form-text">Ingrese el costo de la mano de obra.</div>
+  <label for="workforce_cost">Costo de la mano de obra</label>
+  <span class="helper-text" data-error="wrong" data-success="right">Ingrese el costo de la mano de obra.</span>
 
   @error('workforce_cost')
   <div class="alert alert-danger p-0 pb-0">{{ $message }}</div>
@@ -85,5 +83,5 @@
 </div>
 
 <div class="mb-3 col-12">
-  <button type="submit" class="btn btn-secondary">Guardar cambios</button>
+  <button type="submit" class="btn waves-effect waves-light green">Guardar cambios</button>
 </div>

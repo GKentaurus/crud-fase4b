@@ -8,16 +8,16 @@
 @include('templates.navbar')
 <div class="container mt-3">
   <div class="row">
-    <div class="col-12 tabla table-responsive">
+    <div class="col s12 tabla">
       <h1>Listado de empleados</h1>
       @isset($employeeName)
-        <div class="col-12 alert alert-info">
+        <div class="col s12 alert alert-info">
           El empleado{{$employeeName}} ha sido eliminado.
         </div>
       @endisset
 
       @if(isset($employees) && count($employees) > 0)
-        <table class="table">
+        <table class="table responsive-table">
           <thead>
           <tr>
             <th scope="col">#</th>
@@ -33,12 +33,12 @@
               <td>{{ $employee['firstname'] }} {{ $employee['lastname'] }}</td>
               <td>{{ $employee['document_type'] }} {{ $employee['document_number'] }}</td>
               <td>
-                <a href="{{ route('employee.show', $employee['id']) }}" class="btn btn-sm btn-info">Ver</a>
-                <a href="{{ route('employee.edit', $employee['id']) }}" class="btn btn-sm btn-primary">Editar</a>
+                <a href="{{ route('employee.show', $employee['id']) }}" class="btn waves-effect waves-light blue darken-1">Ver</a>
+                <a href="{{ route('employee.edit', $employee['id']) }}" class="btn waves-effect waves-light amber">Editar</a>
                 <form action="{{ route('employee.destroy', $employee['id']) }}" method="POST" class="d-inline">
                   @csrf
                   @method('DELETE')
-                  <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                  <button type="submit" class="btn waves-effect waves-light red darken-4">Eliminar</button>
                 </form>
               </td>
             </tr>

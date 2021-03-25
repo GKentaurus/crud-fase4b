@@ -1,5 +1,5 @@
 @if(isset($job->jobDetails) && count($job->jobDetails) > 0)
-  <table class="table">
+  <table class="table responsive-table">
     <thead>
     <tr>
       <th scope="col">#</th>
@@ -17,12 +17,12 @@
         <td>${{ $detail['part_cost'] + $detail['workforce_cost'] }}</td>
         <td>{{ $detail['created_at'] }}</td>
         <td>
-          <a href="{{ route('job.detail.show', [$job['id'], $detail['id']]) }}" class="btn btn-sm btn-success">Ver</a>
-          <a href="{{ route('job.detail.edit', [$job['id'], $detail['id']]) }}" class="btn btn-sm btn-primary">Editar</a>
+          <a href="{{ route('job.detail.show', [$job['id'], $detail['id']]) }}" class="btn waves-effect waves-light blue darken-1">Ver</a>
+          <a href="{{ route('job.detail.edit', [$job['id'], $detail['id']]) }}" class="btn waves-effect waves-light amber">Editar</a>
           <form action="{{ route('job.detail.destroy', [$job['id'], $detail['id']]) }}" method="POST" class="d-inline">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+            <button type="submit" class="btn waves-effect waves-light red darken-4">Eliminar</button>
           </form>
         </td>
       </tr>

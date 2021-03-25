@@ -1,7 +1,8 @@
-<div class="footer fixed-bottom">
+<footer class="page-footer">
   <p>
     Hecho con Juguito de Laravel
-    <br>
-    Desarrollado por Danniela Riaño y Carlos Moreno
   </p>
-</div>
+          <div class="footer-copyright">
+    Desarrollado por Danniela Riaño y Carlos Moreno
+          </div>
+</footer>

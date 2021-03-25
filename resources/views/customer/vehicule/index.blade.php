@@ -1,6 +1,6 @@
 
 @if(isset($customer->vehicules) && count($customer->vehicules) > 0)
-  <table class="table">
+  <table class="table responsive-table">
     <thead>
     <tr>
       <th scope="col">#</th>
@@ -20,12 +20,12 @@
         <td>{{ $vehicule['model'] }}</td>
         <td>{{ $vehicule['color'] }}</td>
         <td>
-          <a href="{{ route('vehicule.show', $vehicule['id']) }}" class="btn btn-sm btn-info">Ver</a>
-          <a href="{{ route('vehicule.edit', $vehicule['id']) }}" class="btn btn-sm btn-primary">Editar</a>
+          <a href="{{ route('vehicule.show', $vehicule['id']) }}" class="btn waves-effect waves-light blue darken-1">Ver</a>
+          <a href="{{ route('vehicule.edit', $vehicule['id']) }}" class="btn waves-effect waves-light amber">Editar</a>
           <form action="{{ route('vehicule.destroy', $vehicule['id']) }}" method="POST" class="d-inline">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+            <button type="submit" class="btn waves-effect waves-light red darken-4">Eliminar</button>
           </form>
         </td>
       </tr>

@@ -6,10 +6,10 @@
 </head>
 <body>
 @include('templates.navbar')
-<div class="container mt-3">
+<div class="container">
   <div class="row">
-    <div class="col-12">
-      <form class="row g-3" method="post" action="{{ route('customer.update', $customer['id']) }}">
+    <div class="col s12">
+      <form method="post" action="{{ route('customer.update', $customer['id']) }}">
         @method('PUT')
         @include('customer.form')
       </form>

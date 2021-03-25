@@ -6,12 +6,12 @@
 </head>
 <body>
 @include('templates.navbar')
-<div class="container mt-3">
+<div class="container">
   <div class="row">
-    <div class="col-12 tabla table-responsive">
+    <div class="col s12 tabla">
       <h1>Listado de Facturas</h1>
       @if(isset($bills) && count($bills) > 0)
-        <table class="table">
+        <table class="table responsive-table">
           <thead>
           <tr>
             <th scope="col">#</th>
@@ -31,7 +31,7 @@
               <td>{{ $bill['created_at'] }}</td>
               <td>{{ $bill['total_cost'] + $bill['total_tax'] }}</td>
               <td>
-                <a href="{{ route('bill.show', $bill['id']) }}" class="btn btn-sm btn-info">Ver</a>
+                <a href="{{ route('bill.show', $bill['id']) }}" class="btn waves-effect waves-light blue darken-1">Ver</a>
               </td>
             </tr>
           @endforeach

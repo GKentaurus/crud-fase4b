@@ -6,68 +6,68 @@
 </head>
 <body>
 @include('templates.navbar')
-<div class="container mt-3">
+<div class="container">
   <div class="row">
-    <div class="col-6">
+    <div class="col l6 s12">
       <h2>Información de la Factura</h2>
-      <div class="mb-3">
-        <label for="vehicule_information" class="form-label">Vehículo intervenido</label>
-        <input type="text" class="form-control" id="vehicule_information" name="vehicule_information"
-               aria-describedby="vehicule_information" value="{{$vehicule['license_plate']}}" disabled>
+      <div class="input-field col l6 s12">
+        <input type="text" id="vehicule_information" name="vehicule_information"
+        aria-describedby="vehicule_information" value="{{$vehicule['license_plate']}}" disabled>
+        <label for="vehicule_information">Vehículo intervenido</label>
       </div>
 
-      <div class="mb-3">
-        <label for="customer_information" class="form-label">Propietario del vehículo</label>
-        <input type="text" class="form-control" id="customer_information" name="customer_information"
-               aria-describedby="customer_information_help"
-               value="{{$customer['firstname']}} {{$customer['lastname']}}"
-               disabled>
+      <div class="input-field col l6 s12">
+        <input type="text" id="customer_information" name="customer_information"
+        aria-describedby="customer_information_help"
+        value="{{$customer['firstname']}} {{$customer['lastname']}}"
+        disabled>
+        <label for="customer_information">Propietario del vehículo</label>
       </div>
 
-      <div class="mb-3">
-        <label for="subtotal" class="form-label">Subtotal</label>
-        <input type="text" class="form-control" id="subtotal" name="subtotal" aria-describedby="subtotal_help"
-               value="{{$bill['total_cost']}}" disabled>
+      <div class="input-field col l6 s12">
+        <input type="text" id="subtotal" name="subtotal" aria-describedby="subtotal_help"
+        value="{{$bill['total_cost']}}" disabled>
+        <label for="subtotal">Subtotal</label>
       </div>
 
-      <div class="mb-3">
-        <label for="tax" class="form-label">Impuestos (IVA 19%)</label>
-        <input type="text" class="form-control" id="tax" name="tax" aria-describedby="tax_help"
-               value="{{$bill['total_tax']}}" disabled>
+      <div class="input-field col l6 s12">
+        <input type="text" id="tax" name="tax" aria-describedby="tax_help"
+        value="{{$bill['total_tax']}}" disabled>
+        <label for="tax">Impuestos (IVA 19%)</label>
       </div>
 
-      <div class="mb-3">
-        <label for="total" class="form-label">Total</label>
-        <input type="text" class="form-control" id="total" name="total" aria-describedby="total_help"
-               value="{{$bill['total_cost'] + $bill['total_tax']}}" disabled>
+      <div class="input-field col l6 s12">
+        <input type="text" id="total" name="total" aria-describedby="total_help"
+        value="{{$bill['total_cost'] + $bill['total_tax']}}" disabled>
+        <label for="total">Total</label>
       </div>
-      <div class="mb-3">
-        {{--        <a href="{{route('customer.show', $bill['customer_id'])}}" class="btn btn-primary">Ver propietario del vehículo</a>--}}
+      <div class="col l6 s12">
+        {{--        <a href="{{route('customer.show', $bill['customer_id'])}}" class="btn waves-effect waves-light blue darken-1">Ver propietario del vehículo</a>--}}
       </div>
     </div>
-    <div class="col-6">
+    <div class="col l6 s12">
       <h2>Totales de la Factura</h2>
-      <div class="mb-3">
-        <label for="subtotal" class="form-label">Subtotal</label>
-        <input type="text" class="form-control" id="subtotal" name="subtotal" aria-describedby="subtotal_help"
-               value="{{$bill['total_cost']}}" disabled>
+      <div class="col l6 s12">
+        <input type="text" id="subtotal" name="subtotal" aria-describedby="subtotal_help"
+        value="{{$bill['total_cost']}}" disabled>
+        <label for="subtotal">Subtotal</label>
       </div>
 
-      <div class="mb-3">
-        <label for="tax" class="form-label">Impuestos (IVA 19%)</label>
-        <input type="text" class="form-control" id="tax" name="tax" aria-describedby="tax_help"
-               value="{{$bill['total_tax']}}" disabled>
+      <div class="col l6 s12">
+        <input type="text" id="tax" name="tax" aria-describedby="tax_help"
+        value="{{$bill['total_tax']}}" disabled>
+        <label for="tax">Impuestos (IVA 19%)</label>
       </div>
 
-      <div class="mb-3">
-        <label for="total" class="form-label">Total</label>
-        <input type="text" class="form-control" id="total" name="total" aria-describedby="total_help"
-               value="{{$bill['total_cost'] + $bill['total_tax']}}" disabled>
+      <div class="col s12">
+        <input type="text" id="total" name="total" aria-describedby="total_help"
+        value="{{$bill['total_cost'] + $bill['total_tax']}}" disabled>
+        <label for="total">Total</label>
       </div>
-      <div class="mb-3">
-        <a href="{{ route('customer.show', $customer['id']) }}" class="btn btn-info">Ver cliente</a>
-        <a href="{{ route('vehicule.show', $vehicule['id']) }}" class="btn btn-info">Ver vehículo</a>
-        <a href="{{ route('job.show', $bill->job['id']) }}" class="btn btn-info">Ver OT</a>
+      <div class="col l6 s12">
+        <a href="{{ route('customer.show', $customer['id']) }}" class="btn waves-effect waves-light blue darken-1">Ver cliente</a>
+        <a href="{{ route('vehicule.show', $vehicule['id']) }}" class="btn waves-effect waves-light blue darken-1">Ver vehículo</a>
+        <a href="{{ route('job.show', $bill->job['id']) }}" class="btn waves-effect waves-light blue darken-1">Ver OT</a>
       </div>
     </div>
   </div>
