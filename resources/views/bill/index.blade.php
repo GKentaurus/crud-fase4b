@@ -9,7 +9,7 @@
 <div class="container">
   <div class="row">
     <div class="col s12 tabla">
-      <h2>Listado de Facturas</h2>
+      <h2><i class="fas fa-file-invoice-dollar"></i> Listado de Facturas</h2>
       @if(isset($bills) && count($bills) > 0)
         <table class="table responsive-table">
           <thead>

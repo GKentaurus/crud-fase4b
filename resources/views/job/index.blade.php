@@ -9,7 +9,7 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col s6">
-      <h3>Listado de trabajos activos</h3> <small>({{ $openJobs->count() }} trabajos pendientes)</small>
+      <h3><i class="fas fa-tools"></i> Listado de trabajos activos</h3> <small>({{ $openJobs->count() }} trabajos pendientes)</small>
       @if(isset($openJobs) && count($openJobs) > 0)
         <table class="table responsive-table">
           <thead>
@@ -38,7 +38,7 @@
       @endif
     </div>
     <div class="col s6">
-      <h3>Listado de trabajos cerrados</h3><small>({{ $closedJobs->count() }} trabajos cerrados)</small>
+      <h3><i class="fas fa-tools"></i> Listado de trabajos cerrados</h3><small>({{ $closedJobs->count() }} trabajos cerrados)</small>
       @if(isset($closedJobs) && count($closedJobs) > 0)
         <table class="table responsive-table">
           <thead>

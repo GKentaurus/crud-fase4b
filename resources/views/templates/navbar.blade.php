@@ -62,36 +62,40 @@
     </div>
   </li>
   <li>
-    <a aria-current="page" href="/">Inicio</a>
+    <a aria-current="page" href="/"><i class="fas fa-home"></i> Inicio</a>
+  </li>
+  <ul class="collapsible">
+    <li>
+      <a class="collapsible-header">
+        <i class="fas fa-user-circle"></i> Clientes <i class="material-icons right">arrow_drop_down</i>
+      </a>
+      <div class="collapsible-body">
+        <ul>
+          <li><a href="{{ route('customer.create') }}">Registrar</a></li>
+          <li><a href=" {{ route('customer.index') }}">Listado</a></li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <a class="collapsible-header">
+        <i class="fas fa-id-card-alt"></i> Empleados <i class="material-icons right">arrow_drop_down</i>
+      </a>
+      <div class="collapsible-body">
+        <ul>
+          <li><a href="{{ route('employee.create') }}">Registrar</a></li>
+          <li><a href=" {{ route('employee.index') }}">Listado</a></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+  <li>
+    <a href="{{ route('vehicule.index') }}"><i class="fas fa-car"></i> Vehículos</a>
   </li>
   <li>
-    <div class="collapsible-header">
-      Clientes
-      <i class="material-icons right">arrow_drop_down</i>
-    </div>
-    <div class="collapsible-body">
-    <li><a class="dropdown-item" href="{{ route('customer.create') }}">Registrar</a></li>
-    <li><a class="dropdown-item" href=" {{ route('customer.index') }}">Listado</a></li>
-    </div>
+    <a href="{{ route('job.index') }}"><i class="fas fa-tools"></i> Trabajos</a>
   </li>
   <li>
-    <div class="collapsible-header">
-      Empleados
-      <i class="material-icons right">arrow_drop_down</i>
-    </div>
-    <div class="collapsible-body">
-    <li><a class="dropdown-item" href="{{ route('employee.create') }}">Registrar</a></li>
-    <li><a class="dropdown-item" href=" {{ route('employee.index') }}">Listado</a></li>
-    </div>
-  </li>
-  <li>
-    <a href="{{ route('vehicule.index') }}">Vehículos</a>
-  </li>
-  <li>
-    <a href="{{ route('job.index') }}">Trabajos</a>
-  </li>
-  <li>
-    <a href="{{ route('bill.index') }}">Facturas</a>
+    <a href="{{ route('bill.index') }}"><i class="fas fa-file-invoice-dollar"></i> Facturas</a>
   </li>
 </ul>
 <br>
