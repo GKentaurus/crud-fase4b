@@ -31,7 +31,7 @@
               <td>{{ $bill['created_at'] }}</td>
               <td>{{ $bill['total_cost'] + $bill['total_tax'] }}</td>
               <td>
-                <a href="{{ route('bill.show', $bill['id']) }}" class="btn waves-effect waves-light blue darken-1">Ver</a>
+                <a href="{{ route('bill.show', $bill['id']) }}" class="btn btn-small waves-effect waves-light blue darken-1">Ver</a>
               </td>
             </tr>
           @endforeach

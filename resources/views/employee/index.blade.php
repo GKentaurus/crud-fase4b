@@ -33,13 +33,15 @@
               <td>{{ $employee['firstname'] }} {{ $employee['lastname'] }}</td>
               <td>{{ $employee['document_type'] }} {{ $employee['document_number'] }}</td>
               <td>
-                <a href="{{ route('employee.show', $employee['id']) }}" class="btn waves-effect waves-light blue darken-1">Ver</a>
-                <a href="{{ route('employee.edit', $employee['id']) }}" class="btn waves-effect waves-light amber">Editar</a>
-                <form action="{{ route('employee.destroy', $employee['id']) }}" method="POST" class="d-inline">
-                  @csrf
-                  @method('DELETE')
-                  <button type="submit" class="btn waves-effect waves-light red darken-4">Eliminar</button>
-                </form>
+                <div class="group-button">
+                  <a href="{{ route('employee.show', $employee['id']) }}" class="btn btn-small waves-effect waves-light blue darken-1">Ver</a>
+                  <a href="{{ route('employee.edit', $employee['id']) }}" class="btn btn-small waves-effect waves-light amber">Editar</a>
+                  <form action="{{ route('employee.destroy', $employee['id']) }}" method="POST" class="d-inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-small waves-effect waves-light red darken-4">Eliminar</button>
+                  </form>
+                </div>
               </td>
             </tr>
           @endforeach

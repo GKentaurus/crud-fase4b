@@ -18,7 +18,7 @@ body {
 .form-text,
 small,
 .helper-text {
-    color: rgb(216, 216, 216);
+    color: rgb(216, 216, 216) !important;
 }
 
 input:not([type]),
@@ -115,4 +115,15 @@ table {
 td,
 tr {
     color: rgb(255, 255, 255) !important;
+}
+
+.group-button {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+.btn-small {
+    margin: 2px !important;
 }

@@ -17,7 +17,7 @@
         <td>{{ $jobDetail->job->vehicule['license_plate'] }}</td>
         <td>{{ $jobDetail['workforce_cost'] }}</td>
         <td>
-          <a href="{{ route('job.detail.show', [$jobDetail->job['id'], $jobDetail['id']]) }}" class="btn waves-effect waves-light blue darken-1">Ver</a>
+          <a href="{{ route('job.detail.show', [$jobDetail->job['id'], $jobDetail['id']]) }}" class="btn btn-small waves-effect waves-light blue darken-1">Ver</a>
         </td>
       </tr>
     @endforeach

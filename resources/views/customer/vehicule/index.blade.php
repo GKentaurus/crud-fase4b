@@ -20,13 +20,15 @@
         <td>{{ $vehicule['model'] }}</td>
         <td>{{ $vehicule['color'] }}</td>
         <td>
-          <a href="{{ route('vehicule.show', $vehicule['id']) }}" class="btn waves-effect waves-light blue darken-1">Ver</a>
-          <a href="{{ route('vehicule.edit', $vehicule['id']) }}" class="btn waves-effect waves-light amber">Editar</a>
-          <form action="{{ route('vehicule.destroy', $vehicule['id']) }}" method="POST" class="d-inline">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn waves-effect waves-light red darken-4">Eliminar</button>
-          </form>
+          <div class="group-button">
+            <a href="{{ route('vehicule.show', $vehicule['id']) }}" class="btn btn-small waves-effect waves-light blue darken-1">Ver</a>
+            <a href="{{ route('vehicule.edit', $vehicule['id']) }}" class="btn btn-small waves-effect waves-light amber">Editar</a>
+            <form action="{{ route('vehicule.destroy', $vehicule['id']) }}" method="POST" class="d-inline">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-small waves-effect waves-light red darken-4">Eliminar</button>
+            </form>
+          </div>
         </td>
       </tr>
     @endforeach

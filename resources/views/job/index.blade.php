@@ -27,7 +27,7 @@
               <td>{{ $job->vehicule['license_plate'] }}</td>
               <td>{{ $job->vehicule->customer['firstname'] }} {{ $job->vehicule->customer['lastname'] }}</td>
               <td>
-                <a href="{{ route('job.show', $job['id']) }}" class="btn waves-effect waves-light blue darken-1">Ver OT</a>
+                <a href="{{ route('job.show', $job['id']) }}" class="btn btn-small waves-effect waves-light blue darken-1">Ver OT</a>
               </td>
             </tr>
           @endforeach
@@ -56,8 +56,10 @@
               <td>{{ $job->vehicule['license_plate'] }}</td>
               <td>{{ $job->vehicule->customer['firstname'] }} {{ $job->vehicule->customer['lastname'] }}</td>
               <td>
-                <a href="{{ route('job.show', $job['id']) }}" class="btn waves-effect waves-light blue darken-1">Ver OT</a>
-                <a href="{{ route('job.show', $job['id']) }}" class="btn waves-effect waves-light blue darken-1">Ver Factura</a>
+                <div class="group-button">
+                  <a href="{{ route('job.show', $job['id']) }}" class="btn btn-small waves-effect waves-light blue darken-1">Ver OT</a>
+                  <a href="{{ route('job.show', $job['id']) }}" class="btn btn-small waves-effect waves-light blue darken-1">Ver Factura</a>
+                </div>
               </td>
             </tr>
           @endforeach
