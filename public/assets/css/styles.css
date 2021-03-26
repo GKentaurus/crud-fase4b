@@ -137,3 +137,13 @@ tr {
 .btn-small {
     margin: 2px !important;
 }
+
+.delbtn {
+    color: #ffab40;
+    margin-right: 24px;
+    transition: color .3s ease;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}

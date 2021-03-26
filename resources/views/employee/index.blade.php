@@ -16,37 +16,43 @@
         </div>
       @endisset
 
+      <div class="row">
       @if(isset($employees) && count($employees) > 0)
-        <table class="table responsive-table">
-          <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombres</th>
-            <th scope="col">Documento</th>
-            <th scope="col">Acciones</th>
-          </tr>
-          </thead>
-          <tbody>
           @foreach($employees as $employee)
-            <tr>
-              <th scope="row">{{ $employee['id'] }}</th>
-              <td>{{ $employee['firstname'] }} {{ $employee['lastname'] }}</td>
-              <td>{{ $employee['document_type'] }} {{ $employee['document_number'] }}</td>
-              <td>
-                <div class="group-button">
-                  <a href="{{ route('employee.show', $employee['id']) }}" class="btn btn-small waves-effect waves-light blue darken-1">Ver</a>
-                  <a href="{{ route('employee.edit', $employee['id']) }}" class="btn btn-small waves-effect waves-light amber">Editar</a>
-                  <form action="{{ route('employee.destroy', $employee['id']) }}" method="POST" class="d-inline">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-small waves-effect waves-light red darken-4">Eliminar</button>
-                  </form>
+          <div class="col l3 s12">
+            <div class="card">
+              <div class="card-content" style="background-color: #6a6a6a;">
+                <span class="card-title center-align">{{ $employee['firstname'] }} {{ $employee['lastname'] }}</span>
+                <div class="center-align" style="height: 70px; margin-bottom: -60px;">
+                  <img src="http://pm1.narvii.com/6875/a7255b42395f1245df50467ebafa79cf1fab8af7r1-1200-1174v2_00.jpg" style="width: 70px;" class="circle">
                 </div>
-              </td>
-            </tr>
+              </div>
+              <div class="card-content" style="padding: 35px 24px 5px 24px;">
+                <ul class="center-align">
+                  <li>{{ $employee['document_type'] }} {{ $employee['document_number'] }}</li>
+                </ul>
+              </div>
+              <div class="card-action">
+                <div class="row">
+                  <div class="col xl4 l6 s4">
+                    <a href="{{ route('employee.show', $employee['id']) }}">Ver</a>
+                  </div>
+                  <div class="col xl4 l6 s4">
+                    <a href="{{ route('employee.edit', $employee['id']) }}">Editar</a>
+                  </div>
+                  <div class="col xl4 l6 s4">
+                    <form action="{{ route('employee.destroy', $employee['id']) }}" method="POST" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                      <button type="submit" class="delbtn" >Eliminar</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           @endforeach
-          </tbody>
-        </table>
+        </div>
       @else
         <div class="alert alert-warning">No hay registros</div>
       @endif
