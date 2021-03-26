@@ -62,7 +62,7 @@
       </a>
     </div>
     <div class="col l3 s12">
-      <a href="{{ route('customer.index') }}">
+      <a href="{{ route('employee.index') }}">
         <div class="card" style="width: 18rem; height: 140px;">
           <div class="card-content white-text">
             <span class="card-title"><i class="fas fa-id-card-alt"></i> Empleados</span>

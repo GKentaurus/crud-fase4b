@@ -35,5 +35,5 @@
     </tbody>
   </table>
 @else
-  <div class="alert alert-warning">No hay registros</div>
+  <div class="alert alert-warning">No hay registros</div> 
 @endif
