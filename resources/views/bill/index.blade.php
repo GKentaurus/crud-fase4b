@@ -9,7 +9,7 @@
 <div class="container">
   <div class="row">
     <div class="col s12 tabla">
-      <h1>Listado de Facturas</h1>
+      <h2>Listado de Facturas</h2>
       @if(isset($bills) && count($bills) > 0)
         <table class="table responsive-table">
           <thead>

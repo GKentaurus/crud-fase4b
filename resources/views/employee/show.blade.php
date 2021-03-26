@@ -9,7 +9,7 @@
 <div class="container">
   <div class="row">
     <div class="col l5 s12">
-      <h2>Información del empleado</h2>
+      <h3>Información del empleado</h3>
       <div class="input-field col l6 s12">
         <input type="text" id="firstname" name="firstname" aria-describedby="firstname_help" value="{{$employee['firstname']}}" disabled>
         <label for="firstname">Nombres</label>
@@ -32,7 +32,7 @@
     </div>
     <div class="col l7 s12">
       <div class="col s12">
-        <h2>Trabajos realizados</h2>
+        <h3>Trabajos realizados</h3>
       </div>
       @include('employee.job-detail.index')
     </div>

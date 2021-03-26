@@ -36,10 +36,10 @@
 
 <div class="input-field col l6 s12">
   @if(isset($jobDetail))
-    <textarea id="intervention_description" name="intervention_description"
+    <textarea id="intervention_description" name="intervention_description"  class="materialize-textarea"
               aria-describedby="intervention_description_help">{{$jobDetail['intervention_description']}}</textarea>
   @else
-    <textarea id="intervention_description" name="intervention_description"
+    <textarea id="intervention_description" name="intervention_description"  class="materialize-textarea"
               aria-describedby="intervention_description_help"></textarea>
   @endif
   <label for="intervention_description">Descripción del trabajo</label>

@@ -9,7 +9,7 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col s12 tabla">
-      <h1>Listado de empleados</h1>
+      <h2>Listado de empleados</h2>
       @isset($employeeName)
         <div class="col s12 alert alert-info">
           El empleado{{$employeeName}} ha sido eliminado.
