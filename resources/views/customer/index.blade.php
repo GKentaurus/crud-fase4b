@@ -9,7 +9,7 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col s12 tabla">
-      <h1>Listado de clientes</h1>
+      <h2><i class="fas fa-user-circle"></i> Listado de clientes</h2>
       @isset($customerName)
         <div class="col s12 alert alert-info">
           El cliente {{$customerName}} ha sido eliminado.

@@ -9,7 +9,7 @@
 <div class="container">
   <div class="row">
     <div class="col l5 s12">
-      <h2>Información de la Orden de Trabajo</h2>
+      <h3>Información de la Orden de Trabajo</h3>
       <div class="input-field col l6 s12">
         <input type="text" id="license_plate" name="license_plate"
         aria-describedby="license_plate_help" value="{{$job->vehicule['license_plate']}}" disabled>
@@ -60,7 +60,7 @@
     </div>
     <div class="col l7 s12">
       <div class="col s12">
-        <h2>Contenido de la OT</h2>
+        <h3>Contenido de la OT</h3>
         @if($job['active_job'])
           <a href="{{ route('job.detail.create', $job['id']) }}" class="btn waves-effect waves-light green">Añadir trabajo</a>
         @endif

@@ -9,14 +9,14 @@
 <div class="container">
   <div class="row">
     <div class="col s12">
-      <h2>Información de la intervención # {{$jobDetail['id']}} de la OT # {{$jobDetail['job_id']}}</h2>
+      <h3>Información de la intervención # {{$jobDetail['id']}} de la OT # {{$jobDetail['job_id']}}</h3>
       <div class="input-field col l6 s12">
         <input type="text" id="intervened_part" name="intervened_part" aria-describedby="intervened_part_help" value="{{$jobDetail['intervened_part']}}" disabled>
         <label for="intervened_part">Parte intervenida</label>
       </div>
 
       <div class="input-field col l6 s12">
-        <textarea id="intervention_description" name="intervention_description" aria-describedby="intervention_description_help" disabled>{{$jobDetail['intervention_description']}}</textarea>
+        <textarea id="intervention_description" name="intervention_description" class="materialize-textarea" aria-describedby="intervention_description_help" disabled>{{$jobDetail['intervention_description']}}</textarea>
         <label for="intervention_description">Descripción del trabajo</label>
       </div>
 

@@ -51,6 +51,30 @@
         </div>
       </a>
     </div>
+    <div class="col l4 s12">
+      <a href="{{ route('customer.index') }}">
+        <div class="card" style="width: 18rem;">
+          <div class="card-content white-text">
+            <span class="card-title"><i class="fas fa-user-circle"></i> Clientes</span>
+            <p class="text">
+              <span class="cant">{{ $totalCustomers}}</span>
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col l4 s12">
+      <a href="{{ route('customer.index') }}">
+        <div class="card" style="width: 18rem;">
+          <div class="card-content white-text">
+            <span class="card-title"><i class="fas fa-id-card-alt"></i> Empleados</span>
+            <p class="text">
+              <span class="cant">{{ $totalEmployees}}</span>
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
   </div>
 </div>
 {{--  Footer --}}

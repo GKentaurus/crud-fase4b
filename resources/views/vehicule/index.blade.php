@@ -9,7 +9,7 @@
 <div class="container">
   <div class="row">
     <div class="col s12 tabla">
-      <h1>Listado de Vehículos</h1>
+      <h2>Listado de Vehículos</h2>
       @if(isset($vehicules) && count($vehicules) > 0)
         <table class="table responsive-table">
           <thead>

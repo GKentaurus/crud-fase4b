@@ -1,7 +1,8 @@
+
 <div class="container">
 <nav class="blue darken-4">
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo"> Taller mecánico SENA</a>
+      <a href="/" class="brand-logo"><div class="hide-on-med-and-down">Taller mecánico SENA</div> <div class="hide-on-large-only">Taller</div> </a>
       <a href="/" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li>
@@ -41,13 +42,22 @@
 </nav>
 </div>
 
+<script>
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+    $('.collapsible').collapsible();
+    $('.dropdown-trigger').dropdown();
+    $('select').formSelect();
+  });
+</script>
+
 <ul class="sidenav" id="mobile-demo">
   <li>
     <div class="user-view">
       <div class="background">
-        <img src="images/office.jpg">
+        <img src="https://img5.goodfon.com/wallpaper/nbig/0/b6/sinii-seryi-metallik-material-design-linii-background.jpg">
       </div>
-      <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+      <a href="#user"><img class="circle" src="http://pm1.narvii.com/6875/a7255b42395f1245df50467ebafa79cf1fab8af7r1-1200-1174v2_00.jpg"></a>
       <a href="#"><span class="white-text">Taller mecánico SENA</span></a>
     </div>
   </li>
@@ -84,12 +94,4 @@
     <a href="{{ route('bill.index') }}">Facturas</a>
   </li>
 </ul>
-<script>
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-    $('.collapsible').collapsible();
-    $('.dropdown-trigger').dropdown();
-    $('select').formSelect();
-  });
-</script>
 <br>

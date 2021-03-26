@@ -9,7 +9,7 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col l5 s12">
-      <h2>Información del Vehiculo</h2>
+      <h3>Información del Vehiculo</h3>
       <div class="input-field col l6 s12">
         <input type="text" id="license_plate" name="license_plate" aria-describedby="license_plate_help" value="{{$vehicule['license_plate']}}" disabled>
         <label for="license_plate">Placa</label>
@@ -30,12 +30,12 @@
         <label for="color">Color</label>
       </div>
       <div class="input-field col l6 s12">
-        <a href="{{route('customer.show', $vehicule['customer_id'])}}" class="btn btn-primary">Ver propietario del vehículo</a>
+        <a href="{{route('customer.show', $vehicule['customer_id'])}}" class="btn btn-primary">Ver propietario</a>
       </div>
     </div>
     <div class="col l7 s12">
       <div class="col s12">
-        <h2>Órdenes de trabajo relacionadas</h2>
+        <h3>Órdenes de trabajo relacionadas</h3>
         <form action="{{ route('vehicule.job.store', $vehicule['id']) }}" method="POST" class="d-inline">
           @csrf
           <button type="submit" class="btn btn-sm btn-success">Crear OT</button>
