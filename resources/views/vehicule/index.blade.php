@@ -10,45 +10,53 @@
   <div class="row">
     <div class="col s12 tabla">
       <h2><i class="fas fa-car"></i> Listado de Vehículos</h2>
+      
+      <div class="row">
       @if(isset($vehicules) && count($vehicules) > 0)
-        <table class="table responsive-table">
-          <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Placa</th>
-            <th scope="col">Marca</th>
-            <th scope="col">Modelo</th>
-            <th scope="col">Color</th>
-            <th scope="col">Acciones</th>
-          </tr>
-          </thead>
-          <tbody>
+          
           @foreach($vehicules as $vehicule)
-            <tr>
-              <th scope="row">{{ $vehicule['id'] }}</th>
-              <td>{{ $vehicule['license_plate'] }}</td>
-              <td>{{ $vehicule['brand'] }}</td>
-              <td>{{ $vehicule['model'] }}</td>
-              <td>{{ $vehicule['color'] }}</td>
-              <td>
-                <div class="group-button">
-                <form action="{{ route('vehicule.job.store', $vehicule['id']) }}" method="POST" class="d-inline">
-                  @csrf
-                  <button type="submit" class="btn btn-small waves-effect waves-light light-green">Crear OT</button>
-                </form>
-                <a href="{{ route('vehicule.show', $vehicule['id']) }}" class="btn btn-small waves-effect waves-light blue darken-1">Ver</a>
-                <a href="{{ route('vehicule.edit', $vehicule['id']) }}" class="btn btn-small waves-effect waves-light amber">Editar</a>
-                <form action="{{ route('vehicule.destroy', $vehicule['id']) }}" method="POST" class="d-inline">
-                  @csrf
-                  @method('DELETE')
-                  <button type="submit" class="btn btn-small waves-effect waves-light red darken-4">Eliminar</button>
-                </form>
+          <div class="col l3 s12">
+            <div class="card">
+              <div class="card-content" style="background-color: #6a6a6a;">
+                <span class="card-title center-align">{{ $vehicule['brand'] }} {{ $vehicule['model'] }}</span>
+                <div class="center-align" style="height: 70px; margin-bottom: -60px;">
+                  <img src="http://pm1.narvii.com/6875/a7255b42395f1245df50467ebafa79cf1fab8af7r1-1200-1174v2_00.jpg" style="width: 70px;" class="circle">
                 </div>
-              </td>
-            </tr>
+              </div>
+              <div class="card-content" style="padding: 35px 24px 5px 24px;">
+                <ul class="center-align">
+                  <li>Placa: {{ $vehicule['license_plate'] }}</li>
+                  <li>Color: {{ $vehicule['color'] }}</li>
+                </ul>
+              </div>
+              <div class="card-action">
+                <div class="row">
+                  <div class="col xl4 l6 s4">
+                    <form action="{{ route('vehicule.job.store', $vehicule['id']) }}" method="POST" class="d-inline">
+                      @csrf
+                      <button type="submit" class="delbtn">Crear OT</button>
+                    </form>
+                  </div>
+                  <div class="col xl4 l6 s4">
+                    <a href="{{ route('vehicule.show', $vehicule['id']) }}">Ver</a>
+                  </div>
+                  <div class="col xl4 l6 s4">
+                    <a href="{{ route('vehicule.edit', $vehicule['id']) }}">Editar</a>
+                  </div>
+                  <div class="col xl4 l6 s4">
+                    <form action="{{ route('vehicule.destroy', $vehicule['id']) }}" method="POST" class="d-inline">
+                        @csrf
+                        @method('DELETE')
+                      <button type="submit" class="delbtn" >Eliminar</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           @endforeach
-          </tbody>
-        </table>
+        </div>
       @else
         <div class="alert alert-warning">No hay registros</div>
       @endif
