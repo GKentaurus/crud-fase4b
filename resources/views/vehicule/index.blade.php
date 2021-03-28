@@ -20,7 +20,7 @@
               <div class="card-content" style="background-color: #6a6a6a;">
                 <span class="card-title center-align">{{ $vehicule['brand'] }} {{ $vehicule['model'] }}</span>
                 <div class="center-align" style="height: 70px; margin-bottom: -60px;">
-                  <img src="http://pm1.narvii.com/6875/a7255b42395f1245df50467ebafa79cf1fab8af7r1-1200-1174v2_00.jpg" style="width: 70px;" class="circle">
+                  <img src="https://media.istockphoto.com/vectors/car-logo-with-circle-hand-colorful-logo-vector-id1064271428" style="width: 70px;" class="circle">
                 </div>
               </div>
               <div class="card-content" style="padding: 35px 24px 5px 24px;">
@@ -31,19 +31,19 @@
               </div>
               <div class="card-action">
                 <div class="row">
-                  <div class="col xl4 l6 s4">
+                  <div class="col xl3 l6 s3">
                     <form action="{{ route('vehicule.job.store', $vehicule['id']) }}" method="POST" class="d-inline">
                       @csrf
                       <button type="submit" class="delbtn">Crear OT</button>
                     </form>
                   </div>
-                  <div class="col xl4 l6 s4">
+                  <div class="col xl2 l6 s3">
                     <a href="{{ route('vehicule.show', $vehicule['id']) }}">Ver</a>
                   </div>
-                  <div class="col xl4 l6 s4">
+                  <div class="col xl3 l6 s3">
                     <a href="{{ route('vehicule.edit', $vehicule['id']) }}">Editar</a>
                   </div>
-                  <div class="col xl4 l6 s4">
+                  <div class="col xl3 l6 s3">
                     <form action="{{ route('vehicule.destroy', $vehicule['id']) }}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
@@ -54,7 +54,7 @@
               </div>
             </div>
           </div>
-          
+
           @endforeach
         </div>
       @else
