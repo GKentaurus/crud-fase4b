@@ -32,13 +32,13 @@
 
       <div class="input-field col l6 s12">
         <input type="text" id="created_at" name="created_at" aria-describedby="created_at"
-              value="{{$jobDetail['created_at']}}" disabled>
+               value="{{$jobDetail['created_at']}}" disabled>
         <label for="created_at">Fecha/Hora de creación</label>
       </div>
 
       <div class="input-field col l6 s12">
         <input type="text" id="updated_at" name="updated_at" aria-describedby="updated_at"
-              value="{{$jobDetail['updated_at']}}" disabled>
+               value="{{$jobDetail['updated_at']}}" disabled>
         <label for="updated_at">Fecha/Hora de actualización</label>
       </div>
     </div>
