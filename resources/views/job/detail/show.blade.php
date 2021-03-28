@@ -40,6 +40,16 @@
         <label for="total_intervention">Total de la intervención</label>
       </div>
 
+      <div class="input-field col l6 s12">
+        <input type="number" id="total_intervention" name="total_intervention" aria-describedby="total_intervention" value="{{$jobDetail['created_at']}}" disabled>
+        <label for="total_intervention">Fecha/Hora de creación</label>
+      </div>
+
+      <div class="input-field col l6 s12">
+        <input type="number" id="total_intervention" name="total_intervention" aria-describedby="total_intervention" value="{{$jobDetail['updated_at']}}" disabled>
+        <label for="total_intervention">Fecha/Hora de actualización</label>
+      </div>
+
     </div>
   </div>
 </div>
