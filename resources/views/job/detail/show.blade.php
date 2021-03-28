@@ -8,8 +8,9 @@
 @include('templates.navbar')
 <div class="container">
   <div class="row">
-    <div class="col s12">
-      <h3>Información de la intervención # {{$jobDetail['id']}} de la OT # {{$jobDetail['job_id']}}</h3>
+    <h3>Información de la intervención # {{$jobDetail['id']}} de la OT # {{$jobDetail['job_id']}}</h3>
+
+    <div class="col l6 s12">
       <div class="input-field col l6 s12">
         <input type="text" id="intervened_part" name="intervened_part" aria-describedby="intervened_part_help"
                value="{{$jobDetail->employee['firstname'] . ' ' . $jobDetail->employee['lastname']}}" disabled>
@@ -30,6 +31,20 @@
       </div>
 
       <div class="input-field col l6 s12">
+        <input type="text" id="created_at" name="created_at" aria-describedby="created_at"
+              value="{{$jobDetail['created_at']}}" disabled>
+        <label for="created_at">Fecha/Hora de creación</label>
+      </div>
+
+      <div class="input-field col l6 s12">
+        <input type="text" id="updated_at" name="updated_at" aria-describedby="updated_at"
+              value="{{$jobDetail['updated_at']}}" disabled>
+        <label for="updated_at">Fecha/Hora de actualización</label>
+      </div>
+    </div>
+
+    <div class="col l6 s12">
+      <div class="input-field col l6 s12">
         <input type="number" id="part_cost" name="part_cost" aria-describedby="part_cost"
                value="{{$jobDetail['part_cost']}}" disabled>
         <label for="part_cost">Costo de la parte (si hubo cambio)</label>
@@ -46,19 +61,8 @@
                value="{{$jobDetail['part_cost'] + $jobDetail['workforce_cost']}}" disabled>
         <label for="total_intervention">Total de la intervención</label>
       </div>
-
-      <div class="input-field col l6 s12">
-        <input type="text" id="created_at" name="created_at" aria-describedby="created_at"
-               value="{{$jobDetail['created_at']}}" disabled>
-        <label for="created_at">Fecha/Hora de creación</label>
-      </div>
-
-      <div class="input-field col l6 s12">
-        <input type="text" id="updated_at" name="updated_at" aria-describedby="updated_at"
-               value="{{$jobDetail['updated_at']}}" disabled>
-        <label for="updated_at">Fecha/Hora de actualización</label>
-      </div>
     </div>
+
   </div>
 </div>
 @include('templates.footer')
