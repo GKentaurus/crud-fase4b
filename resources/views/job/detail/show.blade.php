@@ -11,6 +11,11 @@
     <div class="col s12">
       <h3>Información de la intervención # {{$jobDetail['id']}} de la OT # {{$jobDetail['job_id']}}</h3>
       <div class="input-field col l6 s12">
+        <input type="text" id="intervened_part" name="intervened_part" aria-describedby="intervened_part_help" value="{{$jobDetail->employee['firstname'] . ' ' . $jobDetail->employee['lastname']}}" disabled>
+        <label for="intervened_part">Empleado que hizo el trabajo</label>
+      </div>
+
+      <div class="input-field col l6 s12">
         <input type="text" id="intervened_part" name="intervened_part" aria-describedby="intervened_part_help" value="{{$jobDetail['intervened_part']}}" disabled>
         <label for="intervened_part">Parte intervenida</label>
       </div>
