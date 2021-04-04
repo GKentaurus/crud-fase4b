@@ -27,7 +27,6 @@
            aria-describedby="intervened_part_help">
   @endif
   <label for="intervened_part">Parte intervenida</label>
-  <span class="helper-text" data-error="wrong" data-success="right">Ingrese su primer y segundo nombre</span>
 
   @error('intervened_part')
   <div class="alert alert-danger p-0 pb-0">{{ $message }}</div>

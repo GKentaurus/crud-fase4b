@@ -21,7 +21,7 @@
           <br>
           {{$customer['phone_number']}}
           </p>
-    </div>
+      </div>
     <div class="col l4 s6 offset-l4" style="text-align-last: end;">
       <h5>Información del vehículo</h5>
         <p class="white-text">
@@ -33,16 +33,16 @@
         </p>
     </div>
     <div class="col s12">
-      <table class="striped highlight responsive-table">
+      <table>
         <thead>
-          <tr>
-            <th>OT #</th>
-            <th>Parte intervenida</th>
-            <th>Mecánico</th>
-            <th>Costo de la parte</th>
-            <th>Mano de obra</th>
-            <th>Subtotal</th>
-          </tr>
+        <tr>
+          <th>OT #</th>
+          <th>Parte intervenida</th>
+          <th>Mecánico</th>
+          <th>Costo de la parte</th>
+          <th>Mano de obra</th>
+          <th>Subtotal</th>
+        </tr>
         </thead>
         <tbody>
           @foreach($job->jobDetails as $detail)
@@ -58,7 +58,7 @@
         </tbody>
       </table>
     </div>
-    <div class="col l4 s12 offset-l8" style="text-align-last: end;">
+    <div class="col l4 s6 offset-l8" style="text-align-last: end;">
       <h5>Totales de la Factura</h5>
       <p class="white-text">
         Subtotal: ${{$bill['total_cost']}}
@@ -77,7 +77,6 @@
     <a href="{{ route('job.show', $bill->job['id']) }}"
         class="btn btn-small waves-effect waves-light blue darken-1">Ver OT</a>
   </div>
-</div>
 </div>
 </body>
 @include('templates.footer')

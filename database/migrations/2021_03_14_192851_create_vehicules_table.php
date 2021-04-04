@@ -16,7 +16,7 @@ class CreateVehiculesTable extends Migration
     Schema::create('vehicules', function (Blueprint $table) {
       $table->id();
       $table->foreignId('customer_id');
-      $table->string('license_plate');
+      $table->string('license_plate')->unique();
       $table->string('brand');
       $table->string('model');
       $table->string('color');
